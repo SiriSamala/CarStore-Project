@@ -1,6 +1,15 @@
 const express = require('express')
+const cors=require('cors')
 const app = express()
 const port = 3001
+app.use(cors())
+app.use(express.json())
 const db = require('./config/db')
-
+const Users = require('./routes/UsersRoute')
+const NewCars = require('./routes/NewCarsRoute')
+const UsedCars = require('./routes/UsedCarsRoute')
+app.get('/', (req, res) => res.status(418).json({ message: "Welcome" }))
+app.use('/users',Users)
+app.use('/newcars',NewCars)
+app.use('/usedcars',UsedCars)
 app.listen(port, (() => console.log(`Listening on ${port}`)))

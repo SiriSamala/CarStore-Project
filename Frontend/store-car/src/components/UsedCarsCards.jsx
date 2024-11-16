@@ -16,7 +16,7 @@ const UsedCarsCards = ({ name, img, price }) => {
                             <p className=" font-sans  leading-relaxed text-inherit antialiased font-bold flex flex-row text-xl items-center">
                                 <IndianRupee className='h-5 w-6' /> 25,00,000
                             </p>
-                            <button className="hover:bg-sky-50 w-[50%] bg-neutral-50 font-bold text-blue-400 rounded p-2">
+                            <button className=" w-[50%] bg-sky-200 font-bold text-blue-500 hover:bg-blue-500 hover:text-white rounded-sm shadow-sm p-2">
                                 Order Now
                             </button>
                         </div>

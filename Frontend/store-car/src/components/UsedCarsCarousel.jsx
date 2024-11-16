@@ -17,29 +17,29 @@ const UsedCarsCarousel = () => {
           </div>
         </div>
 
-        <Carousel className="w-full h-[65vh] rounded-md" autoPlay infiniteLoop showThumbs={false} showStatus={false}>
+        <Carousel className="w-full h-[70vh] rounded-md" autoPlay infiniteLoop showThumbs={false} showStatus={false}>
           <div>
-            <img className="h-[80vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/processed_62ae47840c806d47a4b2f9a993354f8a.jpg?imwidth=640" />
+            <img className="h-[85vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/processed_62ae47840c806d47a4b2f9a993354f8a.jpg?imwidth=640" />
 
           </div>
           <div>
-            <img className="h-[80vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/processed_283928c4e35c88a70910a8ce6d7e094b.jpg?imwidth=640" />
+            <img className="h-[85vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/processed_283928c4e35c88a70910a8ce6d7e094b.jpg?imwidth=640" />
 
           </div>
           <div>
-            <img className="h-[80vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/processed_63a2eb44e04598fca9488a84b5fea9e9.jpg?imwidth=640" />
+            <img className="h-[85vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/processed_63a2eb44e04598fca9488a84b5fea9e9.jpg?imwidth=640" />
 
           </div>
           <div>
-            <img className="h-[80vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/processed_c77c59d265cda500bf1a316176529439.jpg?imwidth=640" />
+            <img className="h-[85vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/processed_c77c59d265cda500bf1a316176529439.jpg?imwidth=640" />
 
           </div>
           <div>
-            <img className="h-[80vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/efa9120319c2dd9b48d063e63f6dff56.jpg?imwidth=640" />
+            <img className="h-[85vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/efa9120319c2dd9b48d063e63f6dff56.jpg?imwidth=640" />
 
           </div>
           <div>
-            <img className="h-[80vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/25fdd207f5d67fa23549301d75ca18bd.jpg?imwidth=640" />
+            <img className="h-[85vh] object-cover" src="https://images10.gaadi.com/usedcar_image/4223807/original/25fdd207f5d67fa23549301d75ca18bd.jpg?imwidth=640" />
 
           </div>
         </Carousel>

@@ -1,9 +1,17 @@
-import {Link, NavLink} from "react-router-dom"
-import {Car, User} from "lucide-react"
+import { Link, NavLink } from "react-router-dom"
+import { Car, User, X } from "lucide-react"
+import { useRef, useState } from "react"
+import { Login, Register } from "../api/api"
 import React from 'react'
+import { toast } from "sonner"
 
 const Navbar = () => {
-
+    const [showLogin, setShowLogin] = useState(false)
+    const [showRegister, setShowRegister] = useState(false)
+    const emailRef = useRef('')
+    const passwordRef = useRef('')
+    const nameRef = useRef('')
+    const phoneRef = useRef('')
     const Linksdata = [
         {
             title: 'Home',
@@ -19,19 +27,91 @@ const Navbar = () => {
         }
     ]
 
-  return (
-    <>
-                <div className='w-full h-14 text-black shadow-lg flex flex-row justify-center items-center fixed top-0 left-0 bg-white z-50'>
+    const handleLogin = async (e) => {
+        e.preventDefault()
+        const credentials = {
+            email: emailRef.current.value,
+            password: passwordRef.current.value
+        }
+        try {
+            const response = await Login(credentials)
+            const data = await JSON.stringify(response.data)
+            if (response.status === 200) {
+                // const token = response.data.token
+                toast.success("Login success")
+                setShowLogin(false)
+                // storeToken(token)
+                // if (token) {
+                //     const role = getRole()
+                //     if (role === "ADMIN") {
+                //         //navigate to dashboard
+                //         navigate('/admin/dashboard')
+                //     } else if (role === "USER") {
+                //         //navigate to products
+                //         navigate('/products')
+                //     }
+                // }
+            } else {
+                console.log("Login Error" + data)
+            }
+
+        } catch (error) {
+            console.error(error)
+        }
+
+        console.log(credentials)
+    }
+
+    const handleRegister = async (e) => {
+        e.preventDefault()
+        const credentials = {
+            name: nameRef.current.value,
+            phone: phoneRef.current.value,
+            email: emailRef.current.value,
+            password: passwordRef.current.value
+
+        }
+        try {
+            const response = await Register(credentials)
+            const data = await JSON.stringify(response.data)
+            if (response.status === 200) {
+                console.log("Signup Success" + data)
+                setShowRegister(false)
+                setShowLogin(true)
+            } else {
+                console.log("Signup Error" + data)
+            }
+
+        } catch (error) {
+            console.error(error)
+        }
+
+        console.log(credentials)
+    }
+
+    const switchAuth = () => {
+        if (showLogin) {
+            setShowLogin(false)
+            setShowRegister(true)
+        } else if (showRegister) {
+            setShowLogin(true)
+            setShowRegister(false)
+        }
+    }
+
+    return (
+        <>
+            <div className='w-full h-14 text-black shadow-lg flex flex-row justify-center items-center fixed top-0 left-0 bg-white z-50'>
                 <div className='w-[20%] flex flex-row justify-center items-center  font-bold gap-2 text-2xl text-black'>
                     <div >
-                    <Link to='/'>
-                MotoMart
-                    </Link> 
+                        <Link to='/'>
+                            MotoMart
+                        </Link>
                     </div>
                     <div className="h-15 w-15">
-                    <Link to='/'>
-                <Car className="h-8 w-8" />
-                    </Link> 
+                        <Link to='/'>
+                            <Car className="h-8 w-8" />
+                        </Link>
                     </div>
                 </div>
                 <div className='w-[100%] h-full flex justify-start items-center '>
@@ -43,14 +123,63 @@ const Navbar = () => {
                         ))
                         }
                     </div>
-                    <button className="h-8 w-8 flex justify-center items-center border-2 rounded-full border-black hover:border-blue-700 hover:text-blue-700 ml-4 shadow-md ">
-                    <User  />
+                    <button className="h-8 w-8 flex justify-center items-center border-2 rounded-full border-black hover:border-blue-700 hover:text-blue-700 ml-4 shadow-md " onClick={() => { setShowLogin(!showLogin) }} >
+                        <User />
                     </button>
                 </div>
-                
             </div>
-    </>
-  )
+            {showLogin && (
+                <div className="absolute top-0 left-0 z-50 h-screen w-screen flex justify-center items-center bg-black/40 ">
+                    <div className='h-[55%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md'>
+                        <div className='h-full w-full flex flex-col justify-center items-center text-lg font-semibold gap-3'>
+                            <div className="h-[10%] w-[80%] flex flex-row justify-center items-center">
+                                <h1 className='w-1/2 text-left text-xl my-6 font-bold text-cyan-500'>Login</h1>
+                                <div className="w-1/2 flex justify-end items-center text-red-500 cursor-pointer" onClick={() => { setShowLogin(!showLogin) }}>
+                                    <X className="h-8 w-8 border-2 p-1  border-red-500 rounded-full  hover:bg-red-500 hover:text-white" />
+                                </div>
+                            </div>
+                            <form className='h-[60%] w-[80%] flex flex-col justify-center items-center gap-6' onSubmit={handleLogin}>
+                                <input ref={emailRef} type="email" name="" id="email" placeholder='Email' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-cyan-400 rounded-lg' required />
+                                <input ref={passwordRef} type="password" name="" id="password" placeholder='Password' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-cyan-400 rounded-lg' required />
+                                <button type="submit" className="w-full h-[3rem]  shadow-lg shadow-gray-400 hover:shadow-cyan-400 bg-cyan-500 text-white rounded-lg outline-none">Login</button>
+                            </form>
+                            <div className="h-[10%] w-[80%] flex justify-center items-start ">
+                                <p className="cursor-pointer text-cyan-500 hover:text-cyan-600" onClick={switchAuth}>Register ?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+            }
+
+            {showRegister && (
+                <div className="absolute top-0 left-0 z-50 h-screen w-screen flex justify-center items-center bg-black/40 ">
+                    <div className='h-[75%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md '>
+                        <div className='h-full w-full flex flex-col justify-center items-center text-lg font-semibold gap-4'>
+                            <div className="h-[10%] w-[80%] flex flex-row justify-center items-center">
+                                <h1 className='w-1/2 text-left text-xl my-6 font-bold text-sky-500'>Register</h1>
+                                <div className="w-1/2 flex justify-end items-center text-red-500 cursor-pointer" onClick={() => { setShowRegister(!showRegister) }}>
+                                    <X className="h-8 w-8 border-2 p-1  border-red-500 rounded-full  hover:bg-red-500 hover:text-white" />
+                                </div>
+                            </div>
+                            <form className='h-[70%] w-[80%] flex flex-col justify-center items-center gap-6' onSubmit={handleRegister}>
+                                <input ref={nameRef} type="text" name="" id="name" placeholder='Name' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
+                                <input ref={emailRef} type="email" name="" id="email" placeholder='Email' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
+                                <input ref={passwordRef} type="password" name="" id="password" placeholder='Password' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:sky-purple-400 rounded-sm' required />
+                                <input ref={phoneRef} type="number" name="" id="phone" placeholder='Phone' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
+                                <button type="submit" className="w-full h-[3rem] shadow-lg shadow-gray-400 hover:shadow-sky-400 bg-sky-500 text-white rounded-sm outline-none">Register</button>
+                            </form>
+                            <div className="h-[10%] w-[80%] flex justify-center items-start">
+                                <p className="cursor-pointer text-sky-500 hover:text-sky-600" onClick={switchAuth}>Login ?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+            }
+
+        </>
+    )
 }
 
 export default Navbar

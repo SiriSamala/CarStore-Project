@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom"
 import { Car, User, X } from "lucide-react"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Login, Register } from "../api/api"
 import React from 'react'
 import { toast } from "sonner"
@@ -99,6 +99,12 @@ const Navbar = () => {
         }
     }
 
+    // useEffect(() => {
+    //   if (emailRef.current) {
+    //     emailRef.current.focus(); // Automatically focus on the input
+    //   }
+    // }, []);
+
     return (
         <>
             <div className='w-full h-14 text-black shadow-lg flex flex-row justify-center items-center fixed top-0 left-0 bg-white z-50'>
@@ -128,9 +134,10 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
+
             {showLogin && (
                 <div className="absolute top-0 left-0 z-50 h-screen w-screen flex justify-center items-center bg-black/40 ">
-                    <div className='h-[55%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md'>
+                    {/* <div className='h-[55%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md'>
                         <div className='h-full w-full flex flex-col justify-center items-center text-lg font-semibold gap-3'>
                             <div className="h-[10%] w-[80%] flex flex-row justify-center items-center">
                                 <h1 className='w-1/2 text-left text-xl my-6 font-bold text-cyan-500'>Login</h1>
@@ -147,7 +154,108 @@ const Navbar = () => {
                                 <p className="cursor-pointer text-cyan-500 hover:text-cyan-600" onClick={switchAuth}>Register ?</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+
+                        {/*
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+*/}
+
+<div className="mx-auto max-w-screen-xl px-4 py-5 sm:px-6 lg:px-8 shadow-lg bg-white rounded-lg">
+  <div className="mx-auto max-w-lg  ">
+  <div className="w-full flex justify-end items-center text-gray-700 cursor-pointer" onClick={() => { setShowLogin(!showLogin) }}>
+    <X className="h-8 w-8 border-2 p-1  border-gray-600 rounded-full  hover:bg-gray-700 hover:text-white" />
+    </div>
+    <h1 className="text-center text-2xl font-bold text-black sm:text-3xl">Welcome to MotoMart! </h1>
+
+    <p className="mx-auto mt-4 max-w-md text-center text-gray-600">
+     Log in to explore a wide range of cars, exclusive deals, and personalized services tailored just for you.
+    </p>
+
+    <form action="#" className="mb-0 mt-6 space-y-4 rounded-lg p-4  sm:p-6 lg:p-8">
+      <p className="text-center text-lg font-medium">Sign in to your account</p>
+
+      <div>
+        <label htmlFor="email" className="sr-only">Email</label>
+
+        <div className="relative">
+          <input
+            type="email"
+            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg"
+            placeholder="Enter email"
+          />
+
+          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="password" className="sr-only">Password</label>
+
+        <div className="relative">
+          <input
+            type="password"
+            className="w-full rounded-lg  p-4 pe-12 text-sm shadow-lg shadow-gray-700/10"
+            placeholder="Enter password"
+          />
+
+          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        className="block w-full rounded-lg bg-gray-600 px-5 py-3 text-sm font-medium text-white hover:bg-black"
+      >
+        Sign in
+      </button>
+
+      <p className="text-center text-sm text-gray-500">
+        No account?
+        <a className="underline" href="#">Sign up</a>
+      </p>
+    </form>
+  </div>
+</div>
+
                 </div>
             )
             }
@@ -183,4 +291,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

@@ -44,7 +44,7 @@ const UsedCarsCarousel = () => {
           </div>
         </Carousel>
 
-      /* From Uiverse.io by themrsami */
+
         <div className="bg-sky-50 h-[15vh]  text-black max-w-md mx-auto rounded-xl shadow-md overflow-hidden md:max-w-2xl m-5 hover:shadow-2xl transition-all duration-500 ease-in-out">
           <div className="md:flex flex flex-row">
             <div className="p-8 flex flex-row ">

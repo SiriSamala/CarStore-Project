@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const UsedCars = require('../models/NewCarsModel')
+const UsedCars = require('../models/UsedCarsModel')
 
 
 router.get('/count', async (req, res) => {
@@ -24,15 +24,16 @@ router.get('/all', async (req, res) => {
 router.post('/add', async (req, res) => {
     try {
 
-        const { name, price, img } = req.body
-        if (!name || !price || !img) {
+        const { name, price, img ,yearsUsed} = req.body
+        if (!name || !price || !img ||!yearsUsed) {
             return res.status(400).json({ message: "All fields required" })
         }
 
         const usedcar = new UsedCars({
             name,
             price,
-            img
+            img,
+            yearsUsed
         })
         await usedcar.save()
         return res.status(200).json(usedcar)

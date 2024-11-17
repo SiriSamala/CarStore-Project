@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NewCars from './pages/NewCars'
 import UsedCars from './pages/UsedCars'

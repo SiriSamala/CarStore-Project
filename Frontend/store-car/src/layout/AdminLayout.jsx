@@ -23,13 +23,12 @@ const AdminLayout = () => {
     //     checkNavigation()
     // }, [Navigate])
     return (
-        <>
-
+        <>        
             <div className="w-screen h-screen flex flex-row justify-center items-center overflow-hidden">
-                <div className="w-[18vw] h-screen ">
+                <div className="w-[10vw] h-screen ">
                     <AdminLeftBar />
                 </div>
-                <div className=" w-[82vw] h-full flex flex-col justify-start items-start">
+                <div className=" w-[90vw] h-full flex flex-col justify-start items-start">
                     <div className="h-[3rem] w-full flex justify-center items-center">
                         <AdminTopBar />
                     </div>
@@ -40,10 +39,8 @@ const AdminLayout = () => {
             </div>
 
             < div className="w-screen h-screen flex flex-row justify-center items-center overflow-hidden">
-                <Loader2 className="h-14 w-14 animate-spin text-purple-500" />
+                <Loader2 className="h-14 w-14 animate-spin text-cyan-500" />
             </div >
-
-
         </>
     )
 }

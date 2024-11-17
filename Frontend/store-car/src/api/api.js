@@ -23,12 +23,22 @@ const API = 'http://localhost:3001'
 //     }
 // )
 
-// ProductEndPonts
-const getProducts = () => axios.get(`${API}/products/all`)
-const getProductsCount = () => axios.get(`${API}/products/count`)
-const addProduct = (product) => axios.post(`${API}/products/add`, product)
-const editProduct = (product, id) => axios.put(`${API}/products/edit/${id}`, product)
-const deleteProduct = (id) => axios.delete(`${API}/products/delete/${id}`)
+// NewCarsEndPonts
+const getNewCar = () => axios.get(`${API}/newcars/all`)
+const getNewCarsCount = () => axios.get(`${API}/newcars/count`)
+const addNewCar = (newcar) => axios.post(`${API}/newcars/add`, newcar)
+const editNewCar = (newcar, id) => axios.put(`${API}/newcars/edit/${id}`, newcar)
+const deleteNewCar = (id) => axios.delete(`${API}/newcars/delete/${id}`)
+
+
+// UsedCarsEndPOints
+const getUsedCar = () => axios.get(`${API}/usedcars/all`)
+const getUsedCarsCount = () => axios.get(`${API}/usedcars/count`)
+const addUsedCar = (usedcar) => axios.post(`${API}/usedcars/add`, usedcar)
+const editUsedCar = (usedcar, id) => axios.put(`${API}/usedcars/edit/${id}`, usedcar)
+const deleteUsedCar = (id) => axios.delete(`${API}/usedcars/delete/${id}`)
+
+
 
 // OrderEndPonts
 const getOrders = () => axios.get(`${API}/orders/all`)
@@ -52,20 +62,25 @@ const Register = (credentials) => axios.post(`${API}/auth/register`, credentials
 // const getOrdersCount = () => axios.get(`${API}/orders/count`)
 
 export { 
-    getProducts, 
+    getNewCar, 
     getOrders, 
     getUsers, 
     Login, 
     Register,
-    addProduct, 
-    deleteProduct, 
-    editProduct, 
+    addNewCar, 
+    deleteNewCar, 
+    editNewCar, 
     addUsers, 
     editUsers, 
     deleteUsers, 
     getUsersCount, 
-    getProductsCount, 
+    getNewCarsCount, 
     getOrdersCount,
-    resetpasswordUsers
+    resetpasswordUsers,
+    getUsedCar,
+    addUsedCar,
+    getUsedCarsCount,
+    editUsedCar,
+    deleteUsedCar
     // deleteOrder
  }

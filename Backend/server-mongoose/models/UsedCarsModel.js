@@ -11,6 +11,10 @@ const UsedCarsSchema=new mongoose.Schema({
     img:{
         type:String,
         required:true
+    },
+    yearsUsed:{
+        type:Number,
+        required:true
     }
 })
 const UsedCars=mongoose.model("Usedcars",UsedCarsSchema)

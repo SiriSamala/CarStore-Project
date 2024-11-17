@@ -58,7 +58,6 @@ const Navbar = () => {
         } catch (error) {
             console.error(error)
         }
-
         console.log(credentials)
     }
 
@@ -123,13 +122,13 @@ const Navbar = () => {
                 <div className='w-[100%] h-full flex justify-start items-center '>
                     <div className='w-[94%] h-full flex flex-row justify-start items-center gap-8 font-bold'>
                         {Linksdata.map((link, index) => (
-                            <NavLink to={link.path} key={index} className='h-[65%] w-20 hover:bg-blue-700 hover:text-white flex justify-center items-center rounded-sm'>
+                            <NavLink to={link.path} key={index} className='h-[65%] w-20 hover:bg-gray-700 hover:text-white flex justify-center items-center rounded-sm'>
                                 {link.title}
                             </NavLink>
                         ))
                         }
                     </div>
-                    <button className="h-8 w-8 flex justify-center items-center border-2 rounded-full border-black hover:border-blue-700 hover:text-blue-700 ml-4 shadow-md " onClick={() => { setShowLogin(!showLogin) }} >
+                    <button className="h-8 w-8 flex justify-center items-center border-2 rounded-full border-black hover:border-gray-500 hover:text-gray-500 ml-4 shadow-md " onClick={() => { setShowLogin(!showLogin) }} >
                         <User />
                     </button>
                 </div>
@@ -166,7 +165,7 @@ const Navbar = () => {
 <div className="mx-auto max-w-screen-xl px-4 py-5 sm:px-6 lg:px-8 shadow-lg bg-white rounded-lg">
   <div className="mx-auto max-w-lg  ">
   <div className="w-full flex justify-end items-center text-gray-700 cursor-pointer" onClick={() => { setShowLogin(!showLogin) }}>
-    <X className="h-8 w-8 border-2 p-1  border-gray-600 rounded-full  hover:bg-gray-700 hover:text-white" />
+    <X className="h-8 w-8  hover:bg-gray-700 hover:text-white" />
     </div>
     <h1 className="text-center text-2xl font-bold text-black sm:text-3xl">Welcome to MotoMart! </h1>
 
@@ -183,8 +182,8 @@ const Navbar = () => {
         <div className="relative">
           <input
             type="email"
-            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg"
-            placeholder="Enter email"
+            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm shadow-gray-700"
+            placeholder="Enter email" required
           />
 
           <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -212,8 +211,8 @@ const Navbar = () => {
         <div className="relative">
           <input
             type="password"
-            className="w-full rounded-lg  p-4 pe-12 text-sm shadow-lg shadow-gray-700/10"
-            placeholder="Enter password"
+            className="w-full rounded-lg  p-4 pe-12 text-sm shadow-sm shadow-gray-700"
+            placeholder="Enter password "required
           />
 
           <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -248,9 +247,9 @@ const Navbar = () => {
         Sign in
       </button>
 
-      <p className="text-center text-sm text-gray-500">
+      <p className="text-center text-sm text-gray-500 hover:text-black">
         No account?
-        <a className="underline" href="#">Sign up</a>
+        <a className="underline hover:text-black" href="#"onClick={switchAuth}>Register</a>
       </p>
     </form>
   </div>
@@ -262,23 +261,23 @@ const Navbar = () => {
 
             {showRegister && (
                 <div className="absolute top-0 left-0 z-50 h-screen w-screen flex justify-center items-center bg-black/40 ">
-                    <div className='h-[75%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md '>
+                    <div className='h-[70%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md '>
                         <div className='h-full w-full flex flex-col justify-center items-center text-lg font-semibold gap-4'>
-                            <div className="h-[10%] w-[80%] flex flex-row justify-center items-center">
-                                <h1 className='w-1/2 text-left text-xl my-6 font-bold text-sky-500'>Register</h1>
-                                <div className="w-1/2 flex justify-end items-center text-red-500 cursor-pointer" onClick={() => { setShowRegister(!showRegister) }}>
-                                    <X className="h-8 w-8 border-2 p-1  border-red-500 rounded-full  hover:bg-red-500 hover:text-white" />
+                            <div className="h-[10%] w-[90%] mt-6 flex flex-row justify-center items-center">
+                                <h1 className='w-[90%] text-left text-2xl my-6 font-bold flex justify-center text-black'>Register</h1>
+                                <div className="w-10 flex justify-end items-center text-black cursor-pointer" onClick={() => { setShowRegister(!showRegister) }}>
+                                    <X className="h-10 w-10  p-1   hover:bg-black hover:text-white" />
                                 </div>
                             </div>
-                            <form className='h-[70%] w-[80%] flex flex-col justify-center items-center gap-6' onSubmit={handleRegister}>
-                                <input ref={nameRef} type="text" name="" id="name" placeholder='Name' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
-                                <input ref={emailRef} type="email" name="" id="email" placeholder='Email' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
-                                <input ref={passwordRef} type="password" name="" id="password" placeholder='Password' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:sky-purple-400 rounded-sm' required />
-                                <input ref={phoneRef} type="number" name="" id="phone" placeholder='Phone' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
-                                <button type="submit" className="w-full h-[3rem] shadow-lg shadow-gray-400 hover:shadow-sky-400 bg-sky-500 text-white rounded-sm outline-none">Register</button>
+                            <form className='h-[75%] w-[80%] flex flex-col justify-center items-center gap-4' onSubmit={handleRegister}>
+                                <input ref={nameRef} type="text" name="" id="name" placeholder='Full Name' className='w-full h-12 text-sm outline-black bg-white border-b-2 border-transparent  p-4 shadow-sm shadow-gray-700 hover:border-spacing-3 focus:border-b-2  rounded-md' required />
+                                <input ref={emailRef} type="email" name="" id="email" placeholder='Email' className='w-full h-12 text-sm outline-black bg-white border-b-2 border-transparent p-4 shadow-sm shadow-gray-700 focus:border-b-2 rounded-md' required />
+                                <input ref={passwordRef} type="password" name="" id="password" placeholder='Password' className='w-full h-12 text-sm outline-black bg-white border-b-2 border-transparent shadow-sm shadow-gray-700 p-4 focus:border-b-2  rounded-md' required />
+                                <input ref={phoneRef} type="" name="" id="phone" placeholder='Phone' className='w-full h-12 text-sm outline-black bg-white border-b-2  p-4  focus:border-b-2 border-transparent shadow-sm shadow-gray-700 rounded-md' required />
+                                <button type="submit" className="w-full h-[3rem] shadow-lg bg-gray-700  hover:bg-black text-white rounded-md outline-none">Register</button>
                             </form>
-                            <div className="h-[10%] w-[80%] flex justify-center items-start">
-                                <p className="cursor-pointer text-sky-500 hover:text-sky-600" onClick={switchAuth}>Login ?</p>
+                            <div className="h-[15%] w-[80%] flex justify-center items-start">
+                                <p className="cursor-pointer text-gray-700 text-sm underline hover:text-black hover:underline" onClick={switchAuth}>Go back to Login ?</p>
                             </div>
                         </div>
                     </div>

@@ -70,7 +70,7 @@ const AdminOrders = () => {
         <AdminPageHeader title='Orders' />
       </div>
       <table className='w-full h-full border-collapse border shadow-lg rounded-md'>
-        <thead className='shadow-md font-bold text-purple-500 text-left rounded-md'>
+        <thead className='shadow-md font-bold text-cyan-500 text-left rounded-md'>
           <tr>
             <th className='p-6'>UID</th>
             <th className='p-6'>PID</th>

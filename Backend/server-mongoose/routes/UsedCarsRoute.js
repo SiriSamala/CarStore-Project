@@ -24,8 +24,8 @@ router.get('/all', async (req, res) => {
 router.post('/add', async (req, res) => {
     try {
 
-        const { name, price, img ,yearsUsed} = req.body
-        if (!name || !price || !img ||!yearsUsed) {
+        const { name, price, img ,yearsUsed,description} = req.body
+        if (!name || !price || !img ||!yearsUsed ||!description) {
             return res.status(400).json({ message: "All fields required" })
         }
 
@@ -33,7 +33,8 @@ router.post('/add', async (req, res) => {
             name,
             price,
             img,
-            yearsUsed
+            yearsUsed,
+            description
         })
         await usedcar.save()
         return res.status(200).json(usedcar)

@@ -31,7 +31,7 @@ const UsedCars = () => {
     return (
       <>
         <div className='w-screen h-[90vh] flex flex-col justify-center items-center'>
-          <Loader2 className='text-purple-500 h-14 w-14 animate-spin' />
+          <Loader2 className='text-black h-14 w-14 animate-spin' />
         </div>
       </>
     )
@@ -58,7 +58,7 @@ const UsedCars = () => {
       
       <div className='w-screen h-full flex justify-start items-start flex-col flex-wrap mt-14 mb-12 gap-y-20 gap-x-2'>
         {usedcars.map((usedcar, index) => (
-          <UsedCarsCards img={usedcar.img} name={usedcar.name} price={usedcar.price} yearsUsed={usedcar.yearsUsed}  key={usedcar._id} />
+          <UsedCarsCards img={usedcar.img} name={usedcar.name} price={usedcar.price} yearsUsed={usedcar.yearsUsed}  key={usedcar._id} description={usedcar.description} />
         ))
         }
       </div>

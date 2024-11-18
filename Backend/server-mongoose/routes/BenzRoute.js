@@ -24,15 +24,16 @@ router.get('/all', async (req, res) => {
 router.post('/add', async (req, res) => {
     try {
         
-        const { name, price, img } = req.body
-        if (!name || !price || !img ) {
+        const { name, price, img,description } = req.body
+        if (!name || !price || !img ||!description) {
             return res.status(400).json({ message: "All fields required" })
         }
 
         const benz = new Benz({
             name,
             price,
-            img
+            img,
+            description
         })
         await benz.save()
         return res.status(200).json(benz)

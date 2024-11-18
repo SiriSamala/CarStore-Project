@@ -1,11 +1,9 @@
-import { IndianRupee } from "lucide-react"
-import React from "react"
+import React from 'react'
 
-const UsedCarsCards = ({ name, img, price, yearsUsed, description }) => {
-    return (
-        <>
-
-            <div className="w-full px-8 h-55 flex flex-col justify-center gap-2 bg-white rounded-lg shadow-black shadow-sm p-2">
+const BenzCarsCards = ({ name, img, price, yearsUsed, description }) => {
+  return (
+    <>
+    <div className="w-full px-8 h-55 flex flex-col justify-center gap-2 bg-white rounded-lg shadow-black shadow-sm p-2">
                 <div className="flex gap-2">
                     <div className=" relative mx-4 -mt-6 overflow-hidden rounded-x bg-clip-border shadow-lg text-white w-1/2 h-[40%]">
                         <img src={img} alt={name} className="bg-purple-200 w-full h-45 shrink-0 rounded-lg" />
@@ -32,10 +30,8 @@ const UsedCarsCards = ({ name, img, price, yearsUsed, description }) => {
                 </div>
 
             </div>
-    
-
-        </>
-    )
+    </>
+  )
 }
 
-export default UsedCarsCards
+export default BenzCarsCards

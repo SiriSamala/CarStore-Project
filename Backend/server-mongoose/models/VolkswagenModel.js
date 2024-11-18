@@ -11,6 +11,10 @@ const VolkswagenSchema=new mongoose.Schema({
     img:{
         type:String,
         required:true
+    },
+    description:{
+        type:String,
+        required:false
     }
 })
 const Volkswagen=mongoose.model("Volkswagen",VolkswagenSchema)

@@ -11,6 +11,10 @@ const BMWSchema=new mongoose.Schema({
     img:{
         type:String,
         required:true
+    },
+    description:{
+        type:String,
+        required:false
     }
 })
 const BMW=mongoose.model("BMW",BMWSchema)

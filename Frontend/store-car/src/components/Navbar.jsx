@@ -162,7 +162,7 @@ const Navbar = () => {
     - @tailwindcss/forms
 */}
 
-<div className="mx-auto max-w-screen-xl px-4 py-5 sm:px-6 lg:px-8 shadow-lg bg-white rounded-lg">
+<div className="mx-auto max-w-screen-xl px-4 py-5 z-50 sm:px-6 lg:px-8 shadow-lg bg-white rounded-lg">
   <div className="mx-auto max-w-lg  ">
   <div className="w-full flex justify-end items-center text-gray-700 cursor-pointer" onClick={() => { setShowLogin(!showLogin) }}>
     <X className="h-8 w-8  hover:bg-gray-700 hover:text-white" />

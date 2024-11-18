@@ -15,6 +15,10 @@ const UsedCarsSchema=new mongoose.Schema({
     yearsUsed:{
         type:Number,
         required:true
+    },
+    description:{
+        type:String,
+        required:false
     }
 })
 const UsedCars=mongoose.model("Usedcars",UsedCarsSchema)

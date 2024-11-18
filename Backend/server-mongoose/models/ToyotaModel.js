@@ -11,6 +11,10 @@ const ToyotaSchema=new mongoose.Schema({
     img:{
         type:String,
         required:true
+    },
+    description:{
+        type:String,
+        required:false
     }
 })
 const Toyota=mongoose.model("Toyota",ToyotaSchema)

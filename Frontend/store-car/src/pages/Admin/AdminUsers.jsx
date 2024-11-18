@@ -163,8 +163,8 @@ const AdminUsers = () => {
         <thead className='shadow-sm font-bold text-cyan-500 text-left'>
           <tr>
             <th className='p-6'>UID</th>
-            <th className='p-6'>name</th>
-            <th className='p-6'>email</th>
+            <th className='p-6'>Name</th>
+            <th className='p-6'>Email</th>
             <th className='p-6'>Phone</th>
             <th className='p-6'>Role</th>
             <th className='p-6'>Action</th>
@@ -204,19 +204,19 @@ const AdminUsers = () => {
       {showAdd && (
         <>
           <div className="absolute top-0 left-0 z-50 h-screen w-screen flex justify-center items-center bg-black/40 ">
-            <div className='h-[90%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md'>
+            <div className='h-[80%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md'>
               <div className='h-full w-full flex flex-col justify-center items-center text-lg font-semibold'>
                 <div className="h-[10%] w-[80%] flex flex-row justify-center items-center">
-                  <h1 className='w-1/2 text-left text-xl my-6 font-bold text-sky-500'>Add User</h1>
+                  <h1 className='w-1/2 text-left text-2xl  font-bold text-cyan-600'>Add User</h1>
                   <div className="w-1/2 flex justify-end items-center text-red-500 cursor-pointer" onClick={() => { setShowAdd(!showAdd) }}>
                     <X className="h-8 w-8 border-2 p-1  border-red-500 rounded-full  hover:bg-red-500 hover:text-white" />
                   </div>
                 </div>
-                <form className='h-[80%] w-[80%] flex flex-col justify-center items-center gap-8' onSubmit={handleAdd}>
-                  <input ref={nameRef} type="text" name="" id="name" placeholder='Name' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required autoFocus />
-                  <input ref={emailRef} type="text" name="" id="email" placeholder='Email' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
-                  <input ref={phoneRef} type="number" name="" id="phone" placeholder='Phone' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
-                  <input ref={passwordRef} type="text" name="" id="password" placeholder='Password' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-sky-400 rounded-sm' required />
+                <form className='h-[80%] w-[80%] flex flex-col justify-center items-center gap-6' onSubmit={handleAdd}>
+                  <input ref={nameRef} type="text" name="" id="name" placeholder='Name' className='w-full h-12 shadow-sm text-md outline-none bg-[#f5f5f7] hover:outline-cyan-700 p-4 focus:shadow-lg focus:border-b-2  rounded-sm' required autoFocus />
+                  <input ref={emailRef} type="text" name="" id="email" placeholder='Email' className='w-full h-12 shadow-sm text-md outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 hover:outline-cyan-700 focus:shadow-lg focus:border-b-2 rounded-sm' required />
+                  <input ref={phoneRef} type="" name="" id="phone" placeholder='Phone' className='w-full h-12 text-md shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 hover:outline-cyan-700 focus:shadow-lg focus:border-b-2 rounded-sm' required />
+                  <input ref={passwordRef} type="text" name="" id="password" placeholder='Password' className='w-full h-12 text-md shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 hover:outline-cyan-700 focus:shadow-lg focus:border-b-2 rounded-sm' required />
                   {/* <input ref={roleRef} type="text" name="" id="role" placeholder='Role' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required /> */}
                   <div className="select">
                     <select name="format" id="format" defaultValue='ADMIN' ref={roleRef}>
@@ -224,7 +224,7 @@ const AdminUsers = () => {
                       <option value="USER">User</option>
                     </select>
                   </div>
-                  <button type="submit" className="w-full h-[3rem]  shadow-lg shadow-gray-400 hover:shadow-sky-400 bg-sky-500 text-white rounded-sm outline-none">Add</button>
+                  <button type="submit" className="w-full h-[3rem] hover:bg-sky-700 bg-cyan-600 text-white rounded-sm outline-none">Add</button>
                 </form>
 
               </div>
@@ -239,17 +239,17 @@ const AdminUsers = () => {
             <div className='h-[75%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md'>
               <div className='h-full w-full flex flex-col justify-center items-center text-lg font-semibold gap-3'>
                 <div className="h-[10%] w-[80%] flex flex-row justify-center items-center">
-                  <h1 className='w-1/2 text-left text-xl my-6 font-bold text-blue-500'>Edit User</h1>
+                  <h1 className='w-1/2 text-left text-xl font-bold text-cyan-600'>Edit User</h1>
                   <div className="w-1/2 flex justify-end items-center text-red-500 cursor-pointer" onClick={() => { setShowEdit(!showEdit) }}>
                     <X className="h-8 w-8 border-2 p-1  border-red-500 rounded-full  hover:bg-red-500 hover:text-white" />
                   </div>
                 </div>
-                <form className='h-[80%] w-[80%] flex flex-col justify-center items-center gap-8' onSubmit={handleEdit}>
-                  <input ref={nameRef} type="text" name="" id="name" placeholder='Name' defaultValue={currentUser.name} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required autoFocus />
-                  <input ref={emailRef} type="text" name="" id="email" placeholder='Email' defaultValue={currentUser.email} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
-                  <input ref={phoneRef} type="number" name="" id="phone" placeholder='Phone number' defaultValue={currentUser.phone} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
-                  <input ref={roleRef} type="text" name="" id="role" placeholder='Role' defaultValue={currentUser.role} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
-                  <button type="submit" className="w-full h-[3rem]  shadow-lg shadow-gray-400 hover:shadow-blue-400 bg-blue-500 text-white rounded-sm outline-none">Save</button>
+                <form className='h-[70%] w-[80%] flex flex-col justify-center items-center gap-8' onSubmit={handleEdit}>
+                  <input ref={nameRef} type="text" name="" id="name" placeholder='Name' defaultValue={currentUser.name} className='w-full h-12 shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 rounded-sm' required autoFocus />
+                  <input ref={emailRef} type="text" name="" id="email" placeholder='Email' defaultValue={currentUser.email} className='w-full h-12 shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2  rounded-sm' required />
+                  <input ref={phoneRef} type="number" name="" id="phone" placeholder='Phone number' defaultValue={currentUser.phone} className='w-full h-12 shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 rounded-sm' required />
+                  <input ref={roleRef} type="text" name="" id="role" placeholder='Role' defaultValue={currentUser.role} className='w-full h-12 shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 rounded-sm' required />
+                  <button type="submit" className="w-full h-[3rem]  shadow-lg shadow-gray-400 hover:bg-sky-700 bg-cyan-600 text-white rounded-sm outline-none">Save</button>
                 </form>
                 {/* <div className="h-[10%] w-[80%] flex justify-center items-start ">
                   <p className="cursor-pointer text-blue-500 hover:text-blue-600" onClick={resetHelper} >change password </p>

@@ -7,7 +7,7 @@ const UsedCarsCarousel = () => {
       <div className="flex gap-6 flex-col">
 
 
-        <div className="w-1/3 h-[20vh] absolute top-40 left-10 z-50 flex justify-center items-center rounded-md bg-black/20 hover:bg-white/30 ">
+        <div className="w-1/3 h-[20vh] absolute bottom-56 left-10 z-50 flex justify-center items-center rounded-md bg-black/20 hover:bg-white/30 ">
           <div className="h-[80%] w-[90%] flex flex-col justify-start items-start gap-2 ">
             <h1 className='w-full text-left text-xl  font-bold text-white hover:text-black'>2018 Mercedes-Benz GLA Class</h1>
             <h1 className='w-full text-left text-xl  font-bold text-white hover:text-black'>₹23,90,000</h1>

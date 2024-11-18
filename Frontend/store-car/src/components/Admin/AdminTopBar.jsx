@@ -11,9 +11,6 @@ const AdminTopBar = () => {
   return (
     <div className='w-full h-full shadow-cyan-400 shadow-sm flex justify-end items-center px-3 '>
     {name}
-    <button classname='h-full w-full flex justify-center items-center shadow-md rounded-md '>
-      <User className=' text-cyan-500 p-2 hover:bg-cyan-500 hover:text-white h-full w-full rounded-full' />
-    </button>
   </div>
 
   )

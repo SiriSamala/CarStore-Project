@@ -58,7 +58,7 @@ const UsedCars = () => {
       
       <div className='w-screen h-full flex justify-start items-start flex-col flex-wrap mt-14 mb-12 gap-y-20 gap-x-2'>
         {usedcars.map((usedcar, index) => (
-          <UsedCarsCards img={UsedCars.img} name={UsedCars.name} price={UsedCars.price} key={UsedCars._id} />
+          <UsedCarsCards img={usedcar.img} name={usedcar.name} price={usedcar.price} yearsUsed={usedcar.yearsUsed}  key={usedcar._id} />
         ))
         }
       </div>

@@ -4,8 +4,7 @@ import React from "react"
 const UsedCarsCards = ({ name, img, price, yearsUsed }) => {
     return (
         <>
-            {/* <div className="w-full flex flex-col gap-3">
-                <p className=" px-8 text-3xl font-bold text-black"> Used Cars</p> */}
+
             <div className="w-full px-8 h-55 flex flex-col justify-center gap-2 bg-white rounded-lg shadow-black shadow-sm p-2">
                 <div className="flex gap-2">
                     <div className=" relative mx-4 -mt-6 overflow-hidden rounded-x bg-clip-border shadow-lg text-white w-1/2 h-[40%]">
@@ -28,8 +27,7 @@ const UsedCarsCards = ({ name, img, price, yearsUsed }) => {
                 </div>
 
             </div>
-
-            {/* </div> */}
+    
 
         </>
     )

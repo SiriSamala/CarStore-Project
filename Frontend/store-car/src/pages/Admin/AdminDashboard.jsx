@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AdminDashboardHomeCards from '../../components/Admin/AdminDashboardHomeCards'
 import { Loader2 } from 'lucide-react'
-import { getNewCarsCount, getUsedCarsCount, getUsersCount } from '../../api/api'
+import { getUsedCarsCount, getUsersCount } from '../../api/api'
 // import { toast } from 'sonner'
 
 const AdminDashboard = (req,res) => {
@@ -16,10 +16,10 @@ const AdminDashboard = (req,res) => {
       if (userresponse.status === 200) {
         setUsers(userresponse.data.count)
       }
-      const newcarsresponse = await getNewCarsCount()
-      if (newcarsresponse.status === 200) {
-        setNewCars(productresponse.data.count)
-      }
+      // const newcarsresponse = await getNewCarsCount()
+      // if (newcarsresponse.status === 200) {
+      //   setNewCars(productresponse.data.count)
+      // }
       const usedcarsresponse = await getUsedCarsCount()
       if (usedcarsresponse.status === 200) {
         setUsedCars(productresponse.data.count)

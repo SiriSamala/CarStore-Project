@@ -25,7 +25,7 @@ const AdminLayout = () => {
     return (
         <>        
             <div className="w-screen h-screen flex flex-row justify-center items-center overflow-hidden">
-                <div className="w-[10vw] h-screen ">
+                <div className="w-[15vw] h-screen ">
                     <AdminLeftBar />
                 </div>
                 <div className=" w-[90vw] h-full flex flex-col justify-start items-start">

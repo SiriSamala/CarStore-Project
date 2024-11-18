@@ -23,13 +23,47 @@ const API = 'http://localhost:3001'
 //     }
 // )
 
-// NewCarsEndPonts
-const getNewCar = () => axios.get(`${API}/newcars/all`)
-const getNewCarsCount = () => axios.get(`${API}/newcars/count`)
-const addNewCar = (newcar) => axios.post(`${API}/newcars/add`, newcar)
-const editNewCar = (newcar, id) => axios.put(`${API}/newcars/edit/${id}`, newcar)
-const deleteNewCar = (id) => axios.delete(`${API}/newcars/delete/${id}`)
+// // NewCarsEndPonts
+// const getNewCar = () => axios.get(`${API}/newcars/all`)
+// const getNewCarsCount = () => axios.get(`${API}/newcars/count`)
+// const addNewCar = (newcar) => axios.post(`${API}/newcars/add`, newcar)
+// const editNewCar = (newcar, id) => axios.put(`${API}/newcars/edit/${id}`, newcar)
+// const deleteNewCar = (id) => axios.delete(`${API}/newcars/delete/${id}`)
 
+// BenzCarsEndPonts
+const getBenzCar = () => axios.get(`${API}/benzcars/all`)
+// const getBenzCarsCount = () => axios.get(`${API}/benzcars/count`)
+const addBenzCar = (benzcar) => axios.post(`${API}/benzcars/add`, benzcar)
+const editBenzCar = (benzcar, id) => axios.put(`${API}/benzcars/edit/${id}`, benzcar)
+const deleteBenzCar = (id) => axios.delete(`${API}/benzcars/delete/${id}`)
+
+// BMWCarsEndPonts
+const getBMWCar = () => axios.get(`${API}/bmwcars/all`)
+// const getBMWCarsCount = () => axios.get(`${API}/bmwcars/count`)
+const addBMWCar = (bmwcar) => axios.post(`${API}/bmwcars/add`, bmwcar)
+const editBMWCar = (bmwcar, id) => axios.put(`${API}/bmwcars/edit/${id}`, bmwcar)
+const deleteBMWCar = (id) => axios.delete(`${API}/bmwcars/delete/${id}`)
+
+// HondaCarsEndPonts
+const getHondaCar = () => axios.get(`${API}/hondacars/all`)
+// const getHondaCarsCount = () => axios.get(`${API}/hondacars/count`)
+const addHondaCar = (hondacar) => axios.post(`${API}/hondacars/add`, hondacar)
+const editHondaCar = (hondacar, id) => axios.put(`${API}/hondacars/edit/${id}`, hondacar)
+const deleteHondaCar = (id) => axios.delete(`${API}/hondacars/delete/${id}`)
+
+// ToyotaCarsEndPonts
+const getToyotaCar = () => axios.get(`${API}/toyotacars/all`)
+// const getToyotaCarsCount = () => axios.get(`${API}/toyotacars/count`)
+const addToyotaCar = (toyotacar) => axios.post(`${API}/toyotacars/add`, toyotacar)
+const editToyotaCar = (toyotacar, id) => axios.put(`${API}/toyotacars/edit/${id}`, toyotacar)
+const deleteToyotaCar = (id) => axios.delete(`${API}/toyotacars/delete/${id}`)
+
+// VolkswagenCarsEndPonts
+const getVolkswagenCar = () => axios.get(`${API}/volkswagencars/all`)
+// const getVolkswagenCarsCount = () => axios.get(`${API}/volkswagencars/count`)
+const addVolkswagenCar = (volkswagencar) => axios.post(`${API}/volkswagencars/add`, volkswagencar)
+const editVolkswagenCar = (volkswagencar, id) => axios.put(`${API}/volkswagencars/edit/${id}`, volkswagencar)
+const deleteVolkswagenCar = (id) => axios.delete(`${API}/volkswagencars/delete/${id}`)
 
 // UsedCarsEndPOints
 const getUsedCar = () => axios.get(`${API}/usedcars/all`)
@@ -59,28 +93,29 @@ const Login = (credentials) => axios.post(`${API}/auth/login`, credentials)
 const Register = (credentials) => axios.post(`${API}/auth/register`, credentials)
 
 
-// const getOrdersCount = () => axios.get(`${API}/orders/count`)
 
 export { 
-    getNewCar, 
+    // getNewCar, 
     getOrders, 
     getUsers, 
     Login, 
     Register,
-    addNewCar, 
-    deleteNewCar, 
-    editNewCar, 
+    // addNewCar, 
+    // deleteNewCar, 
+    // editNewCar, 
     addUsers, 
     editUsers, 
     deleteUsers, 
     getUsersCount, 
-    getNewCarsCount, 
+    // getNewCarsCount, 
     getOrdersCount,
     resetpasswordUsers,
-    getUsedCar,
-    addUsedCar,
-    getUsedCarsCount,
-    editUsedCar,
-    deleteUsedCar,
-    deleteOrder
+    getUsedCar,addUsedCar,getUsedCarsCount,editUsedCar,deleteUsedCar,
+    deleteOrder,
+    getBenzCar,addBenzCar,deleteBenzCar,editBenzCar,
+    getBMWCar,addBMWCar,deleteBMWCar,editBMWCar,
+    getHondaCar,addHondaCar,deleteHondaCar,editHondaCar,
+    getToyotaCar,addToyotaCar,deleteToyotaCar,editToyotaCar,
+    getVolkswagenCar,addVolkswagenCar,deleteVolkswagenCar,editVolkswagenCar
+    // getBenzCarsCount
  }

@@ -81,6 +81,6 @@ export {
     addUsedCar,
     getUsedCarsCount,
     editUsedCar,
-    deleteUsedCar
-    // deleteOrder
+    deleteUsedCar,
+    deleteOrder
  }

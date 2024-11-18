@@ -12,6 +12,11 @@ import AdminOrders from './pages/Admin/AdminOrders'
 import AdminUsers from './pages/Admin/AdminUsers'
 import AdminDashboard from './pages/Admin/AdminDashboard'
 import NotFound from './pages/NotFound'
+import BenzCars from './pages/BenzCars'
+import BMWCars from './pages/BMWCars'
+import VolkswagenCars from './pages/volkswagenCars'
+import ToyotaCars from './pages/ToyotaCars'
+import HondaCars from './pages/HondaCars'
 
 const App = () => {
   return (
@@ -23,6 +28,11 @@ const App = () => {
               <Route path='/' element={<Home />} />
               <Route path='/newcars' element={<NewCars />} />
               <Route path='/usedcars' element={<UsedCars />} />
+              <Route path='/BenzCars' element={<BenzCars />} />
+              <Route path='/BMWCars' element={<BMWCars />} />
+              <Route path='/VolkswagenCars' element={<VolkswagenCars />} />
+              <Route path='/ToyotaCars' element={<ToyotaCars />} />
+              <Route path='/HondaCars' element={<HondaCars />} />
             </Route>
 
 

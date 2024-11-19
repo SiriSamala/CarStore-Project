@@ -1,5 +1,6 @@
+import { IndianRupee } from 'lucide-react'
 import React from 'react'
-import {IndianRupee} from 'lucide-react'
+
 
 const VolkswagenCarsCards = ({ name, img, price, description }) => {
   return (

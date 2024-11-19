@@ -1,6 +1,7 @@
+import { IndianRupee } from 'lucide-react'
 import React from 'react'
 
-const BenzCarsCards = ({ name, img, price, yearsUsed, description }) => {
+const BenzCarsCards = ({ name, img, price, description }) => {
   return (
     <>
     <div className="w-full px-8 h-55 flex flex-col justify-center gap-2 bg-white rounded-lg shadow-black shadow-sm p-2">
@@ -12,9 +13,6 @@ const BenzCarsCards = ({ name, img, price, yearsUsed, description }) => {
                         <h3 className="font-bold text-3xl">{name}</h3>
                         <p className=" font-sans  leading-relaxed text-inherit antialiased flex flex-row text-lg items-center">
                             <IndianRupee className='h-5 w-6' /> {price}
-                        </p>
-                        <p className=" font-sans  leading-relaxed text-inherit antialiased flex flex-row text-lg items-center">
-                            {yearsUsed} years used
                         </p>
                         <div className=" pt-0 w-full">
                             <button type="button" className=" w-full hover:bg-black bg-gray-700 font-bold text-white rounded p-2">

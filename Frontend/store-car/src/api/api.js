@@ -69,8 +69,8 @@ const deleteVolkswagenCar = (id) => axiosInstance.delete(`${API}/volkswagencars/
 const getUsedCar = () => axios.get(`${API}/usedcars/all`)
 const getUsedCarsCount = () => axiosInstance.get(`/usedcars/count`)
 const addUsedCar = (usedcar) => axiosInstance.post(`${API}/usedcars/add`, usedcar)
-const editUsedCar = (usedcar, id) => axios.put(`${API}/usedcars/edit/${id}`, usedcar)
-const deleteUsedCar = (id) => axios.delete(`${API}/usedcars/delete/${id}`)
+const editUsedCar = (usedcar, id) => axiosInstance.put(`${API}/usedcars/edit/${id}`, usedcar)
+const deleteUsedCar = (id) => axiosInstance.delete(`${API}/usedcars/delete/${id}`)
 
 
 

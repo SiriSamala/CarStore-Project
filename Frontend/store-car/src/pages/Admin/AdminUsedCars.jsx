@@ -82,6 +82,7 @@ const AdminUsedCars = () => {
       }
     } catch (error) {
       toast.error("Error while Updating")
+      console.error(error.message)
     }
   }
 

@@ -71,8 +71,10 @@ const UsedCars = () => {
   return (
     <>
       <div className="flex flex-col justify-start items-start gap-8 w-screen h-full">
-        <UsedCarsCarousel />
-      </div>
+      {usedcars.map((usedcar, index) => (
+        <UsedCarsCarousel pid={usedcar._id} auth={auth} uid={uid} />
+      ))}
+        </div>
       
       <div className='w-screen h-full flex justify-start items-start flex-col flex-wrap mt-14 mb-12 gap-y-20 gap-x-2'>
         {usedcars.map((usedcar, index) => (

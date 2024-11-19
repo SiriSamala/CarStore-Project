@@ -56,6 +56,8 @@ const AdminDashboard = (req,res) => {
     } catch (error) {
       toast.error(error)
       // return res.status(500).json({ message: error.message })
+       toast.error(error)
+      //return res.status(500).json({ message: error.message })
     } finally {
       setLoading(false)
     }
@@ -68,7 +70,7 @@ const AdminDashboard = (req,res) => {
     return (
       <>
         <div className='w-screen h-[90vh] flex flex-col justify-center items-center'>
-          <Loader2 className='text-purple-500 h-14 w-14 animate-spin' />
+          <Loader2 className='text-cyan-500 h-14 w-14 animate-spin' />
         </div>
       </>
     )

@@ -72,11 +72,11 @@ const AdminOrders = () => {
       <table className='w-full h-full border-collapse border shadow-lg rounded-md'>
         <thead className='shadow-md font-bold text-cyan-500 text-left rounded-md'>
           <tr>
-            <th className='p-6'>UID</th>
-            <th className='p-6'>PID</th>
-            <th className='p-6'>Phone</th>
-            <th className='p-6'>Total</th>
-            <th className='p-6'>Actions</th>
+            <th className='p-6 border-collapse border'>UID</th>
+            <th className='p-6 border-collapse border'>PID</th>
+            <th className='p-6 border-collapse border'>Phone</th>
+            <th className='p-6 border-collapse border'>Total</th>
+            <th className='p-6 border-collapse border'>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -84,11 +84,11 @@ const AdminOrders = () => {
           {
             orders.map((order, index) => (
               <tr key={index}>
-                <td className='p-4'>{order.uid}</td>
-                <td className='p-4'>{order.pid}</td>
-                <td className='p-4'>{order.phone} </td>
-                <td className='p-4'>{order.total}</td>
-                <td className='p-4 flex h-full w-full flex-row justify-start items-center gap-4'>
+                <td className='p-4 border-collapse border'>{order.uid}</td>
+                <td className='p-4 border-collapse border'>{order.pid}</td>
+                <td className='p-4 border-collapse border'>{order.phone} </td>
+                <td className='p-4 border-collapse border'>{order.total}</td>
+                <td className='p-4 border-collapse border flex h-full w-full flex-row justify-start items-center gap-4'>
                   {/* <button className='h-15 w-15 border-blue-500 border-2 p-1 rounded-md text-blue-500 shadow-md
                hover:bg-blue-500 hover:text-white hover:shadow-blue-500'>
                                         <Pencil />

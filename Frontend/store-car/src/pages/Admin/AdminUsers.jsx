@@ -15,6 +15,7 @@ const AdminUsers = () => {
   const emailRef = useRef('')
   const phoneRef = useRef(0)
   const passwordRef = useRef('')
+  const descriptionRef=useRef('')
   const roleRef = useRef('')
 
   const fetchData = async () => {
@@ -39,6 +40,7 @@ const AdminUsers = () => {
       email: emailRef.current.value,
       phone: phoneRef.current.value,
       password: passwordRef.current.value,
+      description:descriptionRef.current.value,
       role: roleRef.current.value
     }
     try {
@@ -69,7 +71,8 @@ const AdminUsers = () => {
       name: nameRef.current.value,
       email: emailRef.current.value,
       phone: phoneRef.current.value,
-      role: roleRef.current.value
+      role: roleRef.current.value,
+      description:descriptionRef.current.value
     }
     try {
       const response = await editUsers(user, currentUser._id)
@@ -162,12 +165,13 @@ const AdminUsers = () => {
       <table className='w-full h-full border-collapse border shadow-lg rounded-md'>
         <thead className='shadow-sm font-bold text-cyan-500 text-left'>
           <tr>
-            <th className='p-6'>UID</th>
-            <th className='p-6'>Name</th>
-            <th className='p-6'>Email</th>
-            <th className='p-6'>Phone</th>
-            <th className='p-6'>Role</th>
-            <th className='p-6'>Action</th>
+            <th className='p-6 border-collapse border'>UID</th>
+            <th className='p-6 border-collapse border'>Name</th>
+            <th className='p-6 border-collapse border'>Email</th>
+            <th className='p-6 border-collapse border'>Phone</th>
+            <th className='p-6 border-collapse border'>Description</th>
+            <th className='p-6 border-collapse border'>Role</th>
+            <th className='p-6 border-collapse border'>Action</th>
 
           </tr>
         </thead>
@@ -176,12 +180,13 @@ const AdminUsers = () => {
           {
             users.map((user, index) => (
               <tr key={index}>
-                <td className='p-4'>{user._id} </td>
-                <td className='p-4'>{user.name} </td>
-                <td className='p-4'>{user.email}</td>
-                <td className='p-4'>{user.phone}</td>
-                <td className='p-4'>{user.role}</td>
-                <td className='p-4 flex h-full w-full flex-row justify-start items-center gap-4'>
+                <td className='p-4 border-collapse border'>{user._id} </td>
+                <td className='p-4 border-collapse border'>{user.name} </td>
+                <td className='p-4 border-collapse border'>{user.email}</td>
+                <td className='p-4 border-collapse border'>{user.phone}</td>
+                <td className='p-4 border-collapse border'>{user.description}</td>
+                <td className='p-4 border-collapse border'>{user.role}</td>
+                <td className='p-4 border-collapse border flex h-full w-full flex-row justify-start items-center gap-4'>
                   <button className='h-15 w-15 border-blue-500 border-2 p-1 rounded-md text-blue-500 shadow-md
              hover:bg-blue-500 hover:text-white hover:shadow-blue-500' onClick={() => { editHelper(user) }}>
                     <Pencil />
@@ -217,6 +222,7 @@ const AdminUsers = () => {
                   <input ref={emailRef} type="text" name="" id="email" placeholder='Email' className='w-full h-12 shadow-sm text-md outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 hover:outline-cyan-700 focus:shadow-lg focus:border-b-2 rounded-sm' required />
                   <input ref={phoneRef} type="" name="" id="phone" placeholder='Phone' className='w-full h-12 text-md shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 hover:outline-cyan-700 focus:shadow-lg focus:border-b-2 rounded-sm' required />
                   <input ref={passwordRef} type="text" name="" id="password" placeholder='Password' className='w-full h-12 text-md shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 hover:outline-cyan-700 focus:shadow-lg focus:border-b-2 rounded-sm' required />
+                  <input ref={descriptionRef} type="text" name="" id="" placeholder='Description' className='w-full h-12 text-md shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 hover:outline-cyan-700 focus:shadow-lg focus:border-b-2 rounded-sm' required />
                   {/* <input ref={roleRef} type="text" name="" id="role" placeholder='Role' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required /> */}
                   <div className="select">
                     <select name="format" id="format" defaultValue='ADMIN' ref={roleRef}>

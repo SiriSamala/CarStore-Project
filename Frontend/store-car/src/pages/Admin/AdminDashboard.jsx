@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AdminDashboardHomeCards from '../../components/Admin/AdminDashboardHomeCards'
 import { Loader2 } from 'lucide-react'
 import { getBenzCarsCount, getBMWCarsCount, getHondaCarsCount, getOrdersCount, getToyotaCarsCount, getUsedCarsCount, getUsersCount, getVolkswagenCarsCount } from '../../api/api'
-// import { toast } from 'sonner'
+import { toast } from 'sonner'
 
 const AdminDashboard = (req,res) => {
   const [users, setUsers] = useState(0)
@@ -54,8 +54,8 @@ const AdminDashboard = (req,res) => {
         setOrders(orderresponse.data.count)
       }
     } catch (error) {
-      // toast.error(error)
-      return res.status(500).json({ message: error.message })
+      toast.error(error)
+      // return res.status(500).json({ message: error.message })
     } finally {
       setLoading(false)
     }

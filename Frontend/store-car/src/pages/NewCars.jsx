@@ -1,18 +1,18 @@
-import React from 'react'
-import NewCarsCards from '../components/NewCarsCards'
-import NewCarsCarousel from '../components/NewCarsCarousel'
+// import React from 'react'
+// import NewCarsCards from '../components/NewCarsCards'
+// import NewCarsCarousel from '../components/NewCarsCarousel'
 
-const NewCars = () => {
-  const [usedcars,setUsedCars]=
-  return (
-    <>
-    <div className='flex flex-col gap-5'>
-    <NewCarsCards />
+// const NewCars = () => {
+//   const [usedcars,setUsedCars]=
+//   return (
+//     <>
+//     <div className='flex flex-col gap-5'>
+//     <NewCarsCards />
 
-    <NewCarsCarousel />
-    </div>
-    </>
-  )
-}
+//     <NewCarsCarousel />
+//     </div>
+//     </>
+//   )
+// }
 
-export default NewCars
+// export default NewCars

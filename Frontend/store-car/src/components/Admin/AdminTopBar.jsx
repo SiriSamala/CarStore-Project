@@ -11,6 +11,7 @@ const AdminTopBar = () => {
   return (
     <div className='w-full h-full shadow-cyan-400 shadow-sm flex justify-end items-center px-3 '>
     {name}
+
   </div>
 
   )

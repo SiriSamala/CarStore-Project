@@ -126,7 +126,7 @@ const AdminUsedCars = () => {
   }
 
   return (
-    <div className='w-full flex flex-col justify-start items-start'>
+    <div className='w-full h-full flex flex-col justify-start items-start'>
       <div className='w-full flex flex-row justify-between items-center my-4 shadow-md rounded-md p-1 border'>
         <AdminPageHeader title='UsedCars' />
         <button className='w-10 h-10 font-bold flex justify-center items-center border-2 border-sky-500 rounded-md
@@ -139,13 +139,13 @@ const AdminUsedCars = () => {
       <table className='w-full h-full border-collapse border shadow-lg rounded-md'>
         <thead className='shadow-md font-bold text-cyan-500 text-left rounded-md'>
           <tr>
-            <th className='p-6'>PID</th>
-            <th className='p-6'>Image</th>
-            <th className='p-6'>Name</th>
-            <th className='p-6'>Price</th>
-            <th className='p-6'>Years Used</th>
-            <th className='p-6'>Description</th>
-            <th className='p-6'>Actions</th>
+            <th className='p-6 border-collapse border'>PID</th>
+            <th className='p-6 border-collapse border '>Image</th>
+            <th className='p-6 border-collapse border'>Name</th>
+            <th className='p-6 border-collapse border'>Price</th>
+            <th className='p-6 border-collapse border'>Years Used</th>
+            <th className='p-6 border-collapse border'>Description</th>
+            <th className='p-6 border-collapse border'>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -153,13 +153,13 @@ const AdminUsedCars = () => {
           {
             usedcars.map((usedcar, index) => (
               <tr key={index}>
-                <td className='p-4'>{usedcar._id} </td>
+                <td className='p-4 border-collapse border'>{usedcar._id} </td>
                 <td className='flex justify-start px-4 items-center'><img src={usedcar.img} alt={usedcar.name} className='h-12 w-12 object-cover rounded-full shadow-md bg-cyan-500' /></td>
-                <td className='p-4'>{usedcar.name} </td>
-                <td className='p-4'>{usedcar.price}</td>
-                <td className='p-4'>{usedcar.yearsUsed}</td>
-                <td className='p-4'>{usedcar.description}</td>
-                <td className='p-4 flex h-full w-full flex-row justify-start items-center gap-4'>
+                <td className='p-4 border-collapse border'>{usedcar.name} </td>
+                <td className='p-4 border-collapse border'>{usedcar.price}</td>
+                <td className='p-4 border-collapse border'>{usedcar.yearsUsed}</td>
+                <td className='p-4 border-collapse border'>{usedcar.description}</td>
+                <td className='p-4 border-collapse border flex h-full w-full flex-row justify-start items-center gap-4'>
                   <button className='h-15 w-15 border-blue-500 border-2 p-1 rounded-md text-blue-500 shadow-md
                hover:bg-blue-500 hover:text-white hover:shadow-blue-500'
                     onClick={() => { editHelper(usedcar) }}>

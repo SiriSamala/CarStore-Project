@@ -1,6 +1,6 @@
 // import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-// import NewCars from './pages/NewCars'
+import NewCars from './pages/NewCars'
 import UsedCars from './pages/UsedCars'
 import Home from './pages/Home'
 import WebLayout from './layout/WebLayout'
@@ -31,7 +31,7 @@ const App = () => {
           <Routes>
             <Route element={<WebLayout />}>
               <Route path='/' element={<Home />} />
-              {/* <Route path='/newcars' element={<NewCars />} /> */}
+              <Route path='/newcars' element={<NewCars />} />
               <Route path='/usedcars' element={<UsedCars />} />
               <Route path='/BenzCars' element={<BenzCars />} />
               <Route path='/BMWCars' element={<BMWCars />} />

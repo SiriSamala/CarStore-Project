@@ -78,7 +78,7 @@ const deleteUsedCar = (id) => axios.delete(`${API}/usedcars/delete/${id}`)
 const getOrders = () => axiosInstance.get(`${API}/orders/all`)
 const getOrdersCount = () => axiosInstance.get(`/orders/count`)
 const deleteOrder = (id) => axiosInstance.delete(`${API}/orders/delete/${id}`)
-// const addOrder = (order) => axiosInstance.post('/orders/add', order)
+const addOrder = (order) => axiosInstance.post('/orders/add', order)
 
 // UserEndPoints
 const getUsers = () => axiosInstance.get(`/users/all`)
@@ -96,7 +96,7 @@ const Register = (credentials) => axios.post(`${API}/auth/register`, credentials
 
 export { 
     // getNewCar, 
-    getOrders, 
+    getOrders,addOrder, 
     getUsers, 
     Login, 
     Register,

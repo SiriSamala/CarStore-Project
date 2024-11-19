@@ -3,7 +3,7 @@ import axios from 'axios'
 import { getToken } from '../service/auth'
 
 
-const API = 'http://localhost:3001'
+const API = 'https://car-store-server.onrender.com'
 
 const axiosInstance =axios.create({
     baseURL:API,

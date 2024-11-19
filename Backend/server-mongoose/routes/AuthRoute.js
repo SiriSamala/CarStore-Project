@@ -9,7 +9,7 @@ router.post('/register', async (req, res) => {
         // const newuser = new Users(req.body)
         const { name, email, phone, password } = req.body
         if (!name || !email || !phone || !password) {
-            return res.status(401).json({ message: "All fields required" })
+            return res.status(400).json({ message: "All fields required" })
         }
 
         //TODO : Add User Email & Phone Validation
@@ -46,7 +46,7 @@ router.post('/login', async (req, res) => {
         // const newuser = new Users(req.body)
         const {  email, password } = req.body
         if (!email || !password) {
-            return res.status(401).json({ message: "All fields required" })
+            return res.status(400).json({ message: "All fields required" })
         }
 
         

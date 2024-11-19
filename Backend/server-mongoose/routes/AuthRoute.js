@@ -49,9 +49,7 @@ router.post('/login', async (req, res) => {
             return res.status(401).json({ message: "All fields required" })
         }
 
-        //TODO : Add User Email & Phone Validation
-
-        //Email
+        
         const user = await Users.findOne({email})
         if(!user) {
             return res.status(500).json({ message: `Invalid Email` })
@@ -62,7 +60,7 @@ router.post('/login', async (req, res) => {
         }
         
         const secretkey='123456'
-        const token=jwt.sign({email:email,name:user.name,id:user._id,role:user.role ,exp : Math.floor(Date.now() / 1000) + (60 * 60 *24 *7)} ,secretkey)
+        const token=jwt.sign({email:user.email,name:user.name,id:user._id,role:user.role ,exp : Math.floor(Date.now() / 1000) + (60 * 60 *24 *7)} ,secretkey)
         return res.status(200).json({ message: "login success" ,token:token})
     } catch (error) {
         return res.status(500).json({ message: error.message })

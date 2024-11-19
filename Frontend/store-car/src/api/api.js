@@ -1,27 +1,27 @@
 
 import axios from 'axios'
-// import { getToken } from '../services/auth'
+import { getToken } from '../service/auth'
 
 
 const API = 'http://localhost:3001'
 
-// const axiosInstance =axios.create({
-//     baseURL:API,
+const axiosInstance =axios.create({
+    baseURL:API,
     
-// })
+})
 
-// axiosInstance.interceptors.request.use(
-//     (config)=>{
-//         const token=getToken()
-//         if(token){
-//             config.headers.Authorization=`${token}`
-//         }
-//         return config;
-//     },
-//     (error)=>{
-//         return Promise.reject(error)
-//     }
-// )
+axiosInstance.interceptors.request.use(
+    (config)=>{
+        const token=getToken()
+        if(token){
+            config.headers.Authorization=`${token}`
+        }
+        return config;
+    },
+    (error)=>{
+        return Promise.reject(error)
+    }
+)
 
 // // NewCarsEndPonts
 // const getNewCar = () => axios.get(`${API}/newcars/all`)
@@ -32,61 +32,61 @@ const API = 'http://localhost:3001'
 
 // BenzCarsEndPonts
 const getBenzCar = () => axios.get(`${API}/benzcars/all`)
-const getBenzCarsCount = () => axios.get(`${API}/benzcars/count`)
-const addBenzCar = (benzcar) => axios.post(`${API}/benzcars/add`, benzcar)
-const editBenzCar = (benzcar, id) => axios.put(`${API}/benzcars/edit/${id}`, benzcar)
-const deleteBenzCar = (id) => axios.delete(`${API}/benzcars/delete/${id}`)
+const getBenzCarsCount = () => axiosInstance.get(`/benzcars/count`)
+const addBenzCar = (benzcar) => axiosInstance.post(`${API}/benzcars/add`, benzcar)
+const editBenzCar = (benzcar, id) => axiosInstance.put(`${API}/benzcars/edit/${id}`, benzcar)
+const deleteBenzCar = (id) => axiosInstance.delete(`${API}/benzcars/delete/${id}`)
 
 // BMWCarsEndPonts
 const getBMWCar = () => axios.get(`${API}/bmwcars/all`)
-const getBMWCarsCount = () => axios.get(`${API}/bmwcars/count`)
-const addBMWCar = (bmwcar) => axios.post(`${API}/bmwcars/add`, bmwcar)
-const editBMWCar = (bmwcar, id) => axios.put(`${API}/bmwcars/edit/${id}`, bmwcar)
-const deleteBMWCar = (id) => axios.delete(`${API}/bmwcars/delete/${id}`)
+const getBMWCarsCount = () => axiosInstance.get(`/bmwcars/count`)
+const addBMWCar = (bmwcar) => axiosInstance.post(`${API}/bmwcars/add`, bmwcar)
+const editBMWCar = (bmwcar, id) => axiosInstance.put(`${API}/bmwcars/edit/${id}`, bmwcar)
+const deleteBMWCar = (id) => axiosInstance.delete(`${API}/bmwcars/delete/${id}`)
 
 // HondaCarsEndPonts
 const getHondaCar = () => axios.get(`${API}/hondacars/all`)
-const getHondaCarsCount = () => axios.get(`${API}/hondacars/count`)
-const addHondaCar = (hondacar) => axios.post(`${API}/hondacars/add`, hondacar)
-const editHondaCar = (hondacar, id) => axios.put(`${API}/hondacars/edit/${id}`, hondacar)
-const deleteHondaCar = (id) => axios.delete(`${API}/hondacars/delete/${id}`)
+const getHondaCarsCount = () => axiosInstance.get(`/hondacars/count`)
+const addHondaCar = (hondacar) => axiosInstance.post(`${API}/hondacars/add`, hondacar)
+const editHondaCar = (hondacar, id) => axiosInstance.put(`${API}/hondacars/edit/${id}`, hondacar)
+const deleteHondaCar = (id) => axiosInstance.delete(`${API}/hondacars/delete/${id}`)
 
 // ToyotaCarsEndPonts
 const getToyotaCar = () => axios.get(`${API}/toyotacars/all`)
-const getToyotaCarsCount = () => axios.get(`${API}/toyotacars/count`)
-const addToyotaCar = (toyotacar) => axios.post(`${API}/toyotacars/add`, toyotacar)
-const editToyotaCar = (toyotacar, id) => axios.put(`${API}/toyotacars/edit/${id}`, toyotacar)
-const deleteToyotaCar = (id) => axios.delete(`${API}/toyotacars/delete/${id}`)
+const getToyotaCarsCount = () => axiosInstance.get(`/toyotacars/count`)
+const addToyotaCar = (toyotacar) => axiosInstance.post(`${API}/toyotacars/add`, toyotacar)
+const editToyotaCar = (toyotacar, id) => axiosInstance.put(`${API}/toyotacars/edit/${id}`, toyotacar)
+const deleteToyotaCar = (id) => axiosInstance.delete(`${API}/toyotacars/delete/${id}`)
 
 // VolkswagenCarsEndPonts
 const getVolkswagenCar = () => axios.get(`${API}/volkswagencars/all`)
-const getVolkswagenCarsCount = () => axios.get(`${API}/volkswagencars/count`)
-const addVolkswagenCar = (volkswagencar) => axios.post(`${API}/volkswagencars/add`, volkswagencar)
-const editVolkswagenCar = (volkswagencar, id) => axios.put(`${API}/volkswagencars/edit/${id}`, volkswagencar)
-const deleteVolkswagenCar = (id) => axios.delete(`${API}/volkswagencars/delete/${id}`)
+const getVolkswagenCarsCount = () => axiosInstance.get(`/volkswagencars/count`)
+const addVolkswagenCar = (volkswagencar) => axiosInstance.post(`${API}/volkswagencars/add`, volkswagencar)
+const editVolkswagenCar = (volkswagencar, id) => axiosInstance.put(`${API}/volkswagencars/edit/${id}`, volkswagencar)
+const deleteVolkswagenCar = (id) => axiosInstance.delete(`${API}/volkswagencars/delete/${id}`)
 
 // UsedCarsEndPOints
 const getUsedCar = () => axios.get(`${API}/usedcars/all`)
-const getUsedCarsCount = () => axios.get(`${API}/usedcars/count`)
-const addUsedCar = (usedcar) => axios.post(`${API}/usedcars/add`, usedcar)
+const getUsedCarsCount = () => axiosInstance.get(`/usedcars/count`)
+const addUsedCar = (usedcar) => axiosInstance.post(`${API}/usedcars/add`, usedcar)
 const editUsedCar = (usedcar, id) => axios.put(`${API}/usedcars/edit/${id}`, usedcar)
 const deleteUsedCar = (id) => axios.delete(`${API}/usedcars/delete/${id}`)
 
 
 
 // OrderEndPonts
-const getOrders = () => axios.get(`${API}/orders/all`)
-const getOrdersCount = () => axios.get(`${API}/orders/count`)
-const deleteOrder = (id) => axios.delete(`${API}/orders/delete/${id}`)
-
+const getOrders = () => axiosInstance.get(`${API}/orders/all`)
+const getOrdersCount = () => axiosInstance.get(`/orders/count`)
+const deleteOrder = (id) => axiosInstance.delete(`${API}/orders/delete/${id}`)
+// const addOrder = (order) => axiosInstance.post('/orders/add', order)
 
 // UserEndPoints
-const getUsers = () => axios.get(`${API}/users/all`)
-const getUsersCount = () => axios.get(`${API}/users/count`)
-const addUsers = (user) => axios.post(`${API}/users/add`,user)
+const getUsers = () => axiosInstance.get(`/users/all`)
+const getUsersCount = () => axiosInstance.get(`/users/count`)
+const addUsers = (user) => axiosInstance.post(`/users/add`,user)
 const editUsers = (user,id) => axios.put(`${API}/users/edit/${id}`,user)
 const deleteUsers = (id) => axios.delete(`${API}/users/delete/${id}`)
-const resetpasswordUsers =(id)=>axios.resetpassword(`${API}/users/resetpassword/${id}`)
+const resetpasswordUsers =(id)=>axios.put(`${API}/users/resetpassword/${id}`)
 
 //AuthEndponts
 const Login = (credentials) => axios.post(`${API}/auth/login`, credentials)

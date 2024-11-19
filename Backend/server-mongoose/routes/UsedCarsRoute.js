@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router();
 const UsedCars = require('../models/UsedCarsModel')
+const { validateTokenAdmin } = require('../config/auth')
 
-
-router.get('/count', async (req, res) => {
+router.get('/count',validateTokenAdmin, async (req, res) => {
     try {
         const count = await UsedCars.countDocuments()
         return res.status(200).json({ count: count })
@@ -21,7 +21,7 @@ router.get('/all', async (req, res) => {
     }
 })
 
-router.post('/add', async (req, res) => {
+router.post('/add',validateTokenAdmin, async (req, res) => {
     try {
 
         const { name, price, img ,yearsUsed,description} = req.body
@@ -43,7 +43,7 @@ router.post('/add', async (req, res) => {
     }
 })
 
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/:id', validateTokenAdmin,async (req, res) => {
     try {
         const id = req.params.id
         const existingcar = await UsedCars.findOne({ _id: id })
@@ -58,7 +58,7 @@ router.put('/edit/:id', async (req, res) => {
 })
 
 
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/:id',validateTokenAdmin, async (req, res) => {
     try {
         const id = req.params.id
         const existingcar = await UsedCars.findOne({ _id: id })
